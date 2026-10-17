@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CK AUTO | Premium Used Cars</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222}
-header{background:#111;color:white;padding:22px;text-align:center}
-header h1{margin:0;letter-spacing:3px}
-header p{color:#bbb;font-size:13px}
-.hero{background:#292929;color:white;padding:48px 20px;text-align:center}
-.hero h2{font-size:30px;margin:0 0 12px}
-main{max-width:1000px;margin:auto;padding:25px 16px}
-.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px #0002}
-.photo{background:#333;color:white;height:220px;display:flex;align-items:center;justify-content:center;text-align:center}
+body{margin:0;background:#171717;color:white;font-family:Arial,sans-serif}
+header{padding:24px;text-align:center;background:#080808}
+header h1{margin:0;font-size:32px;letter-spacing:4px}
+header p{font-size:12px;color:#aaa;letter-spacing:2px}
+.hero{text-align:center;padding:38px 18px;background:#222}
+.hero h2{font-size:29px;margin:0 0 10px}
+.hero p{color:#bbb}
+main{max-width:950px;padding:25px 15px;margin:auto}
+.card{background:#080808;border-radius:18px;overflow:hidden}
+.gallery{position:relative}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{flex:0 0 100%;width:100%;height:360px;object-fit:cover;object-position:center 70%;scroll-snap-align:center}
+.gallery button{position:absolute;top:46%;border:0;background:#0009;color:white;font-size:25px;border-radius:50%;height:42px;width:42px;cursor:pointer}
+.prev{left:10px}.next{right:10px}
+.counter{position:absolute;bottom:12px;right:12px;background:#000a;border-radius:15px;padding:7px 12px;font-size:13px}
 .info{padding:22px}
-.price{font-size:30px;font-weight:bold;color:#c32929}
-.specs{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
-.specs span{background:#eee;padding:9px;border-radius:7px;font-size:13px}
-.btn{display:block;background:#168c4d;color:white;text-align:center;padding:16px;border-radius:9px;text-decoration:none;font-weight:bold}
-footer{text-align:center;padding:30px;color:#777;font-size:13px}
+.info h2{font-size:25px;margin:4px 0 15px}
+.price{font-size:33px;color:#ff7065;font-weight:800}
+.tags{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}
+.tags span{background:#292929;padding:9px;border-radius:8px;font-size:13px}
+.info p{color:#ccc;line-height:1.6}
+.whatsapp{display:block;background:#128c52;color:white;text-decoration:none;padding:17px;text-align:center;border-radius:10px;font-weight:bold;margin-top:22px}
+footer{text-align:center;color:#888;padding:25px;font-size:12px}
 </style>
 </head>
 <body>
@@ -28,17 +37,42 @@ footer{text-align:center;padding:30px;color:#777;font-size:13px}
 <section class="hero"><h2>Find Your Next Car</h2><p>Quality Used Cars in Malaysia</p></section>
 <main>
 <h2>Available Cars</h2>
-<div class="card">
-<div><img src="file_0000000049a482308dfb5596c7e9c592.png" alt="Mercedes-Benz A180" style="width:100%;height:auto;display:block"></div>
+<article class="card">
+<div class="gallery">
+<div class="slides" id="slides">
+<img src="file_0000000049a482308dfb5596c7e9c592.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000180481fda1d0c3bf18941c3a.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_0000000019bc81faad545cf34f32dbad.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_000000001d5482099e60bf2d6b05d088.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_0000000047708230bf291fc84219d926.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000506c81f8a387e0b8eb8f4d19.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_000000005cdc820b9f87c14164caf12d.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000718481fd8c9f13f54009c3a7.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_0000000078388230bbc9a7d7dd8c9ed9.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_0000000083288209b510b97e3b8c6f66.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000894481fab2eaca2af3b17ed8.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000cffc82078c70d821acad3b0c.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000e1f0820b849d855a22c6b84c.png" alt="Mercedes-Benz A180" loading="lazy">
+<img src="file_00000000fa40820b928b2cd506737e67.png" alt="Mercedes-Benz A180" loading="lazy">
+</div>
+<button class="prev" onclick="move(-1)" aria-label="Previous photo">&#8249;</button>
+<button class="next" onclick="move(1)" aria-label="Next photo">&#8250;</button>
+<div class="counter" id="counter">1 / 14</div>
+</div>
 <div class="info">
 <h2>Mercedes-Benz A180</h2>
 <div class="price">RM 73,800</div>
-<div class="specs"><span>2017 / 2022 - To Verify</span><span>Black</span><span>Hatchback</span></div>
-<p>Contact CK AUTO for vehicle details, availability and viewing arrangements.</p>
-<a class="btn" href="https://wa.me/60124883031?text=Hi%20CK%20AUTO%2C%20I%20am%20interested%20in%20the%20Mercedes%20A180">WhatsApp Us</a>
+<div class="tags"><span>Black</span><span>Hatchback</span><span>2017 / 2022 · Please confirm year details</span></div>
+<p>Browse the vehicle photos and contact us to confirm specifications, availability or arrange a viewing.</p>
+<a class="whatsapp" href="https://wa.me/60124883031?text=Hi%20CK%20AUTO%2C%20I%20am%20interested%20in%20the%20Mercedes-Benz%20A180%20RM73800">WhatsApp Enquiry</a>
 </div>
-</div>
+</article>
 </main>
-<footer>CK AUTO Malaysia | All vehicle details subject to confirmation.</footer>
+<footer>CK AUTO Malaysia · Vehicle details subject to confirmation.</footer>
+<script>
+const slides=document.getElementById('slides'),count=document.getElementById('counter');
+function move(n){slides.scrollBy({left:slides.clientWidth*n,behavior:'smooth'})}
+slides.addEventListener('scroll',()=>{count.textContent=(Math.round(slides.scrollLeft/slides.clientWidth)+1)+' / 14'},{passive:true});
+</script>
 </body>
 </html>
